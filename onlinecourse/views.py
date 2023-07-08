@@ -152,7 +152,7 @@ def show_exam_result(request, course_id, submission_id):
         if choice.correct:
             score += choice.question.grade
 
-    grade = score/max_score*100
+    grade = int(score/max_score*100)
     context['max_score'] = max_score
     context['course'] = course
     context['grade'] = grade
